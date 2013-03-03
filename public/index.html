@@ -141,10 +141,14 @@
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/app.js" type="text/javascript"></script>
         <script type="text/javascript">
+             
+           
             var app = { 
                 init: function(){
+                    var last_id = "";
                     this.getCheckins();
                     setInterval(this.getCheckins,10000);
+                    
                 },
                 
                 getCheckins: function(){
@@ -152,12 +156,15 @@
                     $.ajax({
                         url: host+"/checkins",
                         dataType: "json",
-                        success: function (data) {
-                            console.log(data);
-                            
-                        },
                         complete: function(data){
-                            console.log(data);
+                            
+                            var last_checkin = JSON.parse(data.responseText);
+                            this.last_id = last_checkin.id;
+                            var last_type = last_checkin.venue;
+                            
+                            console.log(last_type);
+                            
+                            
                         }
                     });
                 }
@@ -166,6 +173,7 @@
             jQuery(function($){
                 
                 app.init();
+                
                  
             });
         </script>
