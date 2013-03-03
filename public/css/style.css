@@ -21,8 +21,8 @@ ul,ol{
 }
 body{
     font-family: 'Press Start 2P', sans-serif;
-    background-color: #000000;  
-    color:#2F343A;
+    background-color: #2F343A;  
+    color:#FEFEFE;
 }
 
 /*To Load Google Fonts in a decent way*/
@@ -57,10 +57,7 @@ body{
 .main-container{
     width:960px;
     margin: 20px auto;
-    border-top: 14px solid #ccc;
-    border-right: 14px solid #ccc;
-    border-bottom: 14px solid #ccc;
-
+    box-shadow: 2px 1px 6px #333;
 }
 .left{
     float:left;
@@ -101,21 +98,21 @@ body{
 }
 
 .profile{
-    width: 500px;
+    width: 629px;
     height: 400px;
     border-right: 1px solid #D5D6D8;
-    background: #000;
+    background: #222;
     text-align: center;
 }
 .profile img{
-    margin-top:10px;
+    margin-top: 22px;
     padding-bottom: 10px;
 }
 .profile-card{
     background: #FEFEFE;
 }
 .stats{
-    width:359px;   
+    width:230px;   
     height: 400px;
     background: #414146;
 }
@@ -126,12 +123,19 @@ body{
     margin-left: 10px;
     float:left;
 }
+.spec{
+    margin-top: 26px;
+}
 .spec h4{
     margin: 10px; 
+    color: white;
 }
 .rate{
     margin-top: 7px;
 }
 .rate .off{
+    background-position: 0px 22px;
+}
+.rate .on{
     background-position: 0px 0px;
 }
