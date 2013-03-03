@@ -1,5 +1,5 @@
 .login-screen {
-  width: 300px;
+  width: 600px;
   margin: auto;
   margin-top: 10%;
 }
@@ -8,10 +8,11 @@
   color: white;
   text-decoration: none;
   display: inline;
-  margin-left: 38%;
+  margin-left: 35%;
 }
 
 .login-screen img{
   display: inline;
   margin-top: 15%;
+  margin-left: 25%;
 }

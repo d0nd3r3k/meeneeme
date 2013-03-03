@@ -8,7 +8,11 @@ get_checkings = (req, res) ->
     URL = SINGLY_BASE + TOKEN + req.session.accessToken
     request URL, (err, response, body) ->
       body = JSON.parse body
-      res.send body[0].data.venue.categories[0].parents[0]
+      data = {
+        id: body[0].id
+        venue: body[0].data.venue.categories[0].parents[0]
+      }
+      res.send data
   else
     res.redirect "/"
 
