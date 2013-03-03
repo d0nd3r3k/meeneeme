@@ -56,8 +56,3 @@ controller_loader.load(app)
 # -- Start da serva!
 server.listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")
-
-app.get "/", (req, res) ->
-  # Render out views/index.ejs, passing in the session
-  res.render "index",
-    session: req.session

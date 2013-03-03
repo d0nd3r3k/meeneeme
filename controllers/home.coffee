@@ -2,12 +2,15 @@ request = require 'request'
 path = require("path")
 
 get_checkings = (req, res) ->
-  SINGLY_BASE = 'https://api.singly.com/services/foursquare/checkins'
-  TOKEN = '?access_token='
-  URL = SINGLY_BASE + TOKEN + req.session.accessToken
-  console.log URL
-  request URL, (err, response, body) ->
-    res.send body
+  if req.session.accessToken?
+    SINGLY_BASE = 'https://api.singly.com/services/foursquare/checkins'
+    TOKEN = '?access_token='
+    URL = SINGLY_BASE + TOKEN + req.session.accessToken
+    request URL, (err, response, body) ->
+      body = JSON.parse body
+      res.send body[0].data.venue.categories[0].parents[0]
+  else
+    res.redirect "/"
 
 exports.setup = (app) ->
   app.get "/", (req, res) ->
