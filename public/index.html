@@ -67,7 +67,7 @@
                 <div class="stats left">
                     <div class="spec">
                         <h4>Energy</h4>
-                        <div class="rate">
+                        <div id="energy" class="rate">
                             <div id="h-1" class="heart on"></div>
                             <div id="h-2" class="heart on"></div>
                             <div id="h-3" class="heart on"></div>
@@ -78,7 +78,7 @@
                     <div class="clearfix"></div>
                     <div class="spec">
                         <h4>Health</h4>
-                        <div class="rate">
+                        <div id="health" class="rate">
                             <div id="h-1" class="heart on"></div>
                             <div id="h-2" class="heart on"></div>
                             <div id="h-3" class="heart off"></div>
@@ -89,7 +89,7 @@
                     <div class="clearfix"></div>
                     <div class="spec">
                         <h4>Social</h4>
-                        <div class="rate">
+                        <div id="social" class="rate">
                             <div id="h-1" class="heart on"></div>
                             <div id="h-2" class="heart on"></div>
                             <div id="h-3" class="heart on"></div>
@@ -100,7 +100,7 @@
                     <div class="clearfix"></div>
                     <div class="spec">
                         <h4>Productivity</h4>
-                        <div class="rate">
+                        <div id="prod" class="rate">
                             <div id="h-1" class="heart on"></div>
                             <div id="h-2" class="heart on"></div>
                             <div id="h-3" class="heart on"></div>
@@ -111,7 +111,7 @@
                     <div class="clearfix"></div>
                     <div class="spec">
                         <h4>Fitness</h4>
-                        <div class="rate">
+                        <div id="fitness" class="rate">
                             <div id="h-1" class="heart off"></div>
                             <div id="h-2" class="heart off"></div>
                             <div id="h-3" class="heart off"></div>
@@ -145,13 +145,21 @@
            
             var app = { 
                 init: function(){
-                    var last_id = "";
+                    
                     this.getCheckins();
                     setInterval(this.getCheckins,10000);
                     
                 },
                 
                 getCheckins: function(){
+                    var categories = {
+                        "Arts & Entertainment":"social",
+                        "College & University":"productivity",
+                        "food":"health",
+                        "Professional & Other Places":"productivity",
+                        "Nightlife Spots":"social",
+                        "Residences":"energy"
+                    }
                     var host = "http://localhost:8080";
                     $.ajax({
                         url: host+"/checkins",
@@ -162,8 +170,8 @@
                             this.last_id = last_checkin.id;
                             var last_type = last_checkin.venue;
                             
-                            console.log(last_type);
-                            
+                            console.log(categories[last_type]);
+                            $("#prod").effect("highlight", {color:"#BADA55"}, 3000);
                             
                         }
                     });
