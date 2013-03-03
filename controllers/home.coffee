@@ -4,8 +4,8 @@ path = require("path")
 get_checkings = (req, res) ->
   if req.session.accessToken?
     SINGLY_BASE = 'https://api.singly.com/services/foursquare/checkins'
-    TOKEN = '?access_token='
-    URL = SINGLY_BASE + TOKEN + req.session.accessToken
+    OPTIONS = '?limit=1&since=0&access_token='
+    URL = SINGLY_BASE + OPTIONS + req.session.accessToken
     request URL, (err, response, body) ->
       body = JSON.parse body
       data = {
