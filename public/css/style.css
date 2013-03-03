@@ -1,0 +1,55 @@
+/*
+Jamendo Player Stylesheet
+Cooked by Donald Derek Haddad at Arabnet Devtour 2012
+*/
+
+
+.wf-loading * {
+    opacity: 0;
+}
+
+
+h1,h2,h3,h4{
+    font-family: 'Press Start 2P', sans-serif;
+}
+ul,ol{
+    list-style: none;
+    margin:0;
+    padding:0;  
+    font-size: 10px;
+}
+body{
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #000000;  
+    color:#FEFEFE;
+}
+
+/*To Load Google Fonts in a decent way*/
+.wf-loading {
+    background: url('../img/ajax-loader.gif') no-repeat center center;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.wf-active *, 
+.wf-inactive * {
+    -webkit-transition: opacity 1s ease-out;  
+    -moz-transition: opacity 1s ease-out; 
+    -o-transition: opacity 1s ease-out;  
+    transition: opacity 1s ease-out;  
+}
+
+.wf-/*loading*/:after {
+    content: "loading fonts..";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #135040;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 20em;
+    text-align: center;
+}

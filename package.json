@@ -1,0 +1,11 @@
+{
+    "name":"meeneeme",
+    "version":"0.0.1",
+    "private": true,
+    "dependencies":{
+        "express":"~3.0.0",
+        "request": ">= 0.0.1",
+        "node-foursquare": ">= 0.2.0",
+        "mongoauth": ">= 0.6.1"
+    }
+}
