@@ -43,5 +43,13 @@ exports.setup = (app) ->
   app.get "/checkins", (req, res) ->
     get_checkings(req, res)
 
+  app.get "/logout", (req, res) ->
+    req.session.accessToken = null
+    res.redirect '/'
+
   app.get "/test", (req, res) ->
     test(req, res)
+
+  app.get "/dashboard", (req, res) ->
+    res.sendfile(path.join(__dirname, "../public/index.html"))
+

@@ -25,7 +25,8 @@ html(lang='en')
   body
     div
     .login-screen
-      a(href='https://api.singly.com/oauth/authenticate?client_id=8e426d7c4a7d9e715f9035541766dc9c&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fcallback&account=false&service=foursquare') Get your Meneeme!
+      a.login-btn(href='https://api.singly.com/oauth/authenticate?client_id=8e426d7c4a7d9e715f9035541766dc9c&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fcallback&account=false&service=foursquare')
+        img(src="/images/login.png")
       img(src='images/char.png')
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', type='text/javascript')

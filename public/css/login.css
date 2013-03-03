@@ -1,7 +1,6 @@
 .login-screen {
   width: 600px;
   margin: auto;
-  margin-top: 10%;
 }
 
 .login-screen a{
@@ -15,4 +14,10 @@
   display: inline;
   margin-top: 15%;
   margin-left: 25%;
+}
+
+
+.login-btn img{
+  margin-left: 0%;
+
 }

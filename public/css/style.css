@@ -3,7 +3,6 @@ Jamendo Player Stylesheet
 Cooked by Donald Derek Haddad at Arabnet Devtour 2012
 */
 
-
 .wf-loading * {
     opacity: 0;
 }
@@ -69,7 +68,7 @@ body{
 .blocks{
     height: 80px;
     background-image: url('../images/me-sprite-bg.png');
-
+    cursor: pointer;
 }
 .actions #sleep{
     border-left: solid 16px #4945D9;
@@ -117,6 +116,7 @@ body{
     background: #414146;
 }
 .heart{
+
     background-image: url('../images/heart.png');
     width: 24px;
     height: 22px;
@@ -144,4 +144,11 @@ body{
     width: 960px;
     margin-bottom: 40px;
 
+}
+
+
+#logout, #dashboard {
+  float: right;
+  margin-left: 25px;
+  margin-top: 25px;
 }
