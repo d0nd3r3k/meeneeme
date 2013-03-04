@@ -71,23 +71,23 @@ body{
     background-image: url('../images/me-sprite-bg.png');
 
 }
-#sleep{
+.actions #sleep{
     border-left: solid 16px #4945D9;
     background-position: 0px 0px;
 }
-#feed{
+.actions #feed{
     border-left: solid 16px #4DAF7C;
     background-position: -80px 0px;
 }
-#social{
+.actions #social{
     border-left: solid 16px #FF7676;
     background-position: -160px 0px;
 }
-#prod{
+.actions #prod{
     border-left:solid 16px #FA8641;
     background-position: -240px 0px;
 }
-#workout{
+.actions #workout{
     border-left: solid 16px #5C97C0;
     background-position: -320px 0px;
 }

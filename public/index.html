@@ -141,48 +141,55 @@
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/app.js" type="text/javascript"></script>
         <script type="text/javascript">
-             
-           
             var app = { 
                 init: function(){
-                    
                     this.getCheckins();
                     setInterval(this.getCheckins,10000);
-                    
                 },
-                
                 getCheckins: function(){
                     var categories = {
                         "Arts & Entertainment":"social",
-                        "College & University":"productivity",
-                        "food":"health",
-                        "Professional & Other Places":"productivity",
+                        "College & University":"prod",
+                        "food":"feed",
+                        "Professional & Other Places":"prod",
                         "Nightlife Spots":"social",
                         "Residences":"energy"
                     }
                     var host = "http://localhost:8080";
                     $.ajax({
-                        url: host+"/checkins",
-                        dataType: "json",
+                        url: host+"/test",
                         complete: function(data){
+
                             
-                            var last_checkin = JSON.parse(data.responseText);
-                            this.last_id = last_checkin.id;
-                            var last_type = last_checkin.venue;
-                            
-                            console.log(categories[last_type]);
-                            $("#prod").effect("highlight", {color:"#BADA55"}, 3000);
-                            
+                            /*var type = categories[last_checkin];
+                                console.log(type);
+                                
+                                $("#"+type).css("border-left","solid 16px red");
+                                $("#"+type).effect("pulsate", { times:3 }, 2000);
+                                $("#"+type).click(function(){
+                                    $("#"+type).css("border-left","solid 16px #FA8641");
+                                });*/
+                            if (data.responseText != ""){
+                                var last_checkin = JSON.parse(data.responseText);
+                                console.log(last_checkin);
+                            }
+
                         }
+                        
+                    });
+                    var type = 'feed';
+                   var border = ($(".actions #"+type).css("border-left"));
+                   console.log(border)
+                    $(".actions #"+type).css("border-left","solid 16px red");
+                    $(".actions #"+type).effect("pulsate", { times:3 }, 2000);
+                    $(".actions #"+type).click(function(){
+                        $(".actions #"+type).css("border-left",border);
+                        $("#"+type +" .off").first().removeClass(".off").addClass(".on");
                     });
                 }
             }
-            
             jQuery(function($){
-                
                 app.init();
-                
-                 
             });
         </script>
 
