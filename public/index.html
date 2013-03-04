@@ -42,7 +42,7 @@
         <div class="main-container">
             <div class="profile-card">
                 <div class="actions left">
-                    <div id="sleep" class="blocks">
+                    <div id="energy" class="blocks">
 
                     </div>
                     <div id="feed" class="blocks">
@@ -78,7 +78,7 @@
                     <div class="clearfix"></div>
                     <div class="spec">
                         <h4>Health</h4>
-                        <div id="health" class="rate">
+                        <div id="feed" class="rate">
                             <div id="h-1" class="heart on"></div>
                             <div id="h-2" class="heart on"></div>
                             <div id="h-3" class="heart off"></div>
@@ -177,14 +177,15 @@
                         }
                         
                     });
-                    var type = 'feed';
+                    var type = 'energy';
                    var border = ($(".actions #"+type).css("border-left"));
                    console.log(border)
                     $(".actions #"+type).css("border-left","solid 16px red");
                     $(".actions #"+type).effect("pulsate", { times:3 }, 2000);
                     $(".actions #"+type).click(function(){
                         $(".actions #"+type).css("border-left",border);
-                        $("#"+type +" .off").first().removeClass(".off").addClass(".on");
+                        console.log($("#"+type +" .off").first());
+                        $("#"+type +" .off").first().removeClass("off");
                     });
                 }
             }
